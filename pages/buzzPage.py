@@ -22,12 +22,13 @@ class BuzzPage(Base):
     comment_icon =(By.CLASS_NAME, 'bi-chat-text-fill')
     post_heart = (By.ID, 'heart')
     share_icon =(By.CLASS_NAME, "bi-share-fill")
+    filter_btn= ( By.CLASS_NAME, "orangehrm-post-filters-button")
 
     post = (By.CLASS_NAME, 'oxd-grid-item--gutters')
 
     post_text = (By.CLASS_NAME, 'orangehrm-buzz-post-body-text')
     toast = (By.CSS_SELECTOR, 'div.oxd-toast-container.oxd-toast-container--bottom')
-    
+
     #infelizmente tem que usar o xpath pra pegar o texto de likes, pois nao tem id nem classe unica
     like_text = (By.XPATH, './/i[contains(@class, "orangehrm-buzz-stats-like-icon")]/following-sibling::p')
     comment_field =(By.CLASS_NAME, 'oxd-input')
