@@ -15,6 +15,12 @@ def setup_scope():
     LOGGER.info("====> Config Iniciais... <==== ")
 
 @pytest.fixture
+def login_orangehrm(open_browser):
+    login_p = open_browser
+    login_p.faz_login('Admin','admin123')
+    yield login_p.driver
+
+@pytest.fixture
 def open_browser(request):
     LOGGER.info("====> Inciando execucao...")
     selected_browser = request.config.getoption('browser_selenium').lower()
