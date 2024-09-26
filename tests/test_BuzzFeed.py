@@ -159,3 +159,19 @@ class TestBuzz:
 
         # Verifica se o post não está mais presente
         assert not buzz_page.get_latest_post_text() == post_text, "O post ainda está presente após deletar"
+    
+    def test_filtrar_posts(self, open_browser):
+        # . . . CASO TESTE DE DELETAR CT-012 . . .
+        login_p = open_browser
+        login_p.faz_login('Admin', 'admin123')
+
+        # Instancia a classe BuzzPage
+        buzz_page = BuzzPage(driver=login_p.driver)
+
+        # Verifica se está na página Buzz
+        assert buzz_page.is_url_buzzfeeds(), "Não está na página Buzz"
+
+        #Clica no botão de filtro
+        buzz_page.wait_element(buzz_page.filter_btn).click()
+
+        assert buzz_page.is_url_buzzfeeds(), "Não está na página Buzz"
