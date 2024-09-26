@@ -23,9 +23,19 @@ class BasePage:
             else:
                 raise Exception('Browser nao suportado!')
 
-    def wait_element(self, by_selector, timeout):
-        WebDriverWait(self.driver, timeout).until(
-            EC.visibility_of_element_located((by_selector)))
+    def is_url(self,url):
+        return self.driver.current_url==url
+
+    def wait_element(self, element_tuple,timeout=5):
+        return WebDriverWait(self.driver, timeout).until(
+            EC.visibility_of_element_located(element_tuple))
+
+    def close(self):
+        self.driver.quit()
+
+    # def wait_element(self, element_tuple, timeout=5):
+    #     WebDriverWait(self.driver, timeout).until(
+    #         EC.visibility_of_element_located((element_tuple)))
 
     def has_side_panel(self):
         try:

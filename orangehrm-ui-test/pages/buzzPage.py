@@ -6,10 +6,11 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.wait import WebDriverWait
 
-from pages.base import Base
+# from pages.base import Base
+from pages.BasePage import BasePage
 
 
-class BuzzPage(Base):
+class BuzzPage(BasePage):
     url_buzzfeeds = 'https://opensource-demo.orangehrmlive.com/web/index.php/buzz/viewBuzz'
     botao_buzz = (By.XPATH, '//*[contains(@href, "/buzz/viewBuzz")]')
     field_text_post = (By.CLASS_NAME, "oxd-buzz-post-input")
