@@ -1,12 +1,11 @@
-from socket import send_fds
-from selenium import webdriver
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-class BasePage:
+class Base:
 
     side_panel = (By.CLASS_NAME, "oxd-sidepanel-body")
     menu_admin = (By.CSS_SELECTOR, '[href="/web/index.php/admin/viewAdminModule"]')

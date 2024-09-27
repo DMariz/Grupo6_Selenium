@@ -2,12 +2,10 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-# from base_page import Base_Page
-# import Base_Page
-# import Base_Page
-from pages.BasePage import BasePage
 
-class Login_Page(BasePage):
+from .basePage import Base
+
+class Login_Page(Base):
 
     url_login = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
 

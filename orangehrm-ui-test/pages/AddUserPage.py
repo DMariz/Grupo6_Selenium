@@ -1,6 +1,6 @@
 import time
 
-from pages.BasePage import BasePage
+from .basePage import Base
 from selenium.webdriver import ActionChains, Keys
 from selenium.webdriver.common.by import By
 # from selenium.webdriver.support.ui import Select
@@ -11,7 +11,7 @@ from faker import Faker
 
 
 
-class AddUserPage(BasePage):
+class AddUserPage(Base):
 
     title = (By.CLASS_NAME, 'orangehrm-main-title')
     select_list = (By.CLASS_NAME, 'oxd-select-text--active')

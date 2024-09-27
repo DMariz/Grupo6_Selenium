@@ -1,11 +1,11 @@
-from pages.BasePage import BasePage
+from .basePage import Base
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 import logging
 
 LOGGER = logging.getLogger(__name__)
 
-class UserManagementPage(BasePage):
+class UserManagementPage(Base):
 
     title = (By.CLASS_NAME, 'oxd-topbar-header-breadcrumb-level')
     btn_add = (By.CLASS_NAME, 'oxd-button-icon')
